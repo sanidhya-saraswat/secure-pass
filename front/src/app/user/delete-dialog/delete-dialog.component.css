@@ -1,0 +1,14 @@
+.btndiv
+{
+    min-width: 200px;
+    margin-top:20px;
+}
+mat-icon
+{
+    color:var(--primary); 
+    font-size: 70px;
+    width:70px;
+    height: 70px;
+    line-height: 70px;
+    margin-bottom: 5px;
+}

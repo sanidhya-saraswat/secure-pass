@@ -1,0 +1,123 @@
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+:root
+{
+	--primary:#3F51B5;
+}
+html, body, div, span
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, code,
+ img,
+small, strong, 
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+		
+}
+body
+{
+	font-family: 'Roboto', sans-serif;
+    background:rgb(247, 247, 247);
+}
+.searchInput
+{
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+    margin-bottom: 2px;  
+    box-sizing: border-box;  
+}
+.searchDiv
+{
+    position: relative;
+}
+.searchDiv mat-icon
+{
+    position: absolute;
+    right:20px;
+    top:10px;
+    font-size: 35px;
+    color:gray;
+
+}
+.dialogSimple .mat-dialog-container
+{
+	padding:0 !important;
+}
+.dialogSimple .mat-dialog-content
+{
+	padding:0 !important;
+	margin:0 !important;
+}
+.hide
+{
+    visibility: hidden;
+}
+.base
+{
+	max-width: 1350px;
+	margin: auto;
+}
+.nav-bar
+{
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+}
+.topManage
+{
+	position: absolute;
+    top:56px !important;
+}
+.mat-toolbar
+{
+    height: 56px !important;
+    min-height: 56px !important;
+}
+.pointer
+{
+    cursor: pointer;
+}
+.mySnackbar.mat-snack-bar-container
+{
+margin:0 20px 30px 20px !important;
+width:auto;
+border-radius:5px !important;
+}
+*
+{
+	outline: none;
+}
+.highlight
+{
+    background:#ffffcf;
+}
+.mat-toolbar-row
+{
+    padding:5px !important;
+}
+.googleLogo
+{
+    width:20px !important;
+    margin-right: 5px;
+    margin-bottom: 3px;
+}
+.marginTop10
+{
+    margin-top: 8px;
+}
+.bold
+{
+    font-weight: 700;
+}

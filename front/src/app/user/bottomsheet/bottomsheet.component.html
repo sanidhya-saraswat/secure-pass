@@ -1,0 +1,19 @@
+<div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <h2 class="mat-h1">Sort By</h2>
+  <mat-form-field>
+      <mat-select [(ngModel)]="sortByField">
+          <mat-option value="username">Username</mat-option>
+          <mat-option value="type">Account Type</mat-option>
+          <mat-option value="title">Title</mat-option>
+          <mat-option value="createdOn">Created On</mat-option>
+          <mat-option value="lastModifiedOn">Last Modified On</mat-option>
+      </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+      <mat-select [(ngModel)]="order">
+          <mat-option [value]="1">Ascending</mat-option>
+          <mat-option [value]="-1">Descending</mat-option>
+      </mat-select>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="apply()">Apply</button>
+</div>

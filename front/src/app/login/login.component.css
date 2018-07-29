@@ -1,0 +1,105 @@
+.container
+{
+padding:0;
+max-width: 350px;
+overflow:hidden;
+border-radius: 7px;
+}
+.topDiv *
+{
+    width:100%;
+}
+.or
+{
+    color: gray;
+    padding: 10px;
+/*      border: 2px solid lightgray;  */
+    border-radius: 100%;
+    width:auto !important;
+}
+.forgot
+{
+    font-size: 14px;
+    width: auto !important;
+}
+.signInButton
+{
+    width:auto !important; 
+}
+mat-form-field
+{
+    margin-bottom:10px;
+}
+.base
+{
+padding:30px;
+}
+.googleButton
+{
+    margin-bottom:20px;
+}
+.signDiv
+{
+    width:100%;
+    padding:12px;
+    background:#F1F1F1;
+    font-size: 14px;
+}
+.signMessage
+{
+    color:rgb(139, 139, 139);
+    width:auto !important;
+}
+.link
+{
+    padding-top:10px;
+    font-size: 14px;
+    width:auto !important;
+    color:#357FE8;
+    cursor: pointer;
+    font-weight: 700;
+}
+.topDiv
+{
+    padding:25px;
+}
+.error
+{
+    background:rgb(255, 226, 226);
+    color:red;
+    border-radius:5px;
+    font-size: 14px;
+    padding:7px;
+    width:100%;
+    box-sizing: border-box;
+    margin-bottom:10px;
+}
+.notProgress
+{
+    visibility: hidden;
+}
+mat-checkbox
+{
+    width:auto !important;
+}
+.logo img
+{
+    width:70px !important;
+    margin-top:-15px;
+    margin-bottom:5px;
+}
+.logo span
+{
+    font-weight: 700;
+    color:var(--primary);
+    font-size: 24px;
+    width:auto !important;
+}
+.logo
+{
+    margin-bottom: 15px;
+}
+.signIn
+{
+    font-size: 17px;
+}

@@ -1,0 +1,65 @@
+<mat-progress-bar [ngClass]="pageLoadingDone?'hide':''" mode="indeterminate"  ></mat-progress-bar>
+<div fxLayout="row" fxLayoutAlign="center center" class="base">
+<mat-card class="container mat-elevation-z4" [ngClass]="pageLoadingDone?'':'hide'">
+    <mat-progress-bar [ngClass]="showProgress?'':'hide'" mode="indeterminate"></mat-progress-bar>
+    <div class="topDiv">
+        <div fxLayout=column fxLayoutAlign="center center" class="logo">
+            <img src="/assets/icons/securepass.png" >
+          <span>SecurePass</span>
+        </div>
+        <span class="signIn">Sign Up</span>
+  <div *ngFor="let item of errors">
+    <div class="error">{{item}}</div>
+  </div>
+  <form [formGroup]="registerForm" (ngSubmit)="onFormSubmit()">
+    <mat-form-field class="marginTop10">
+      <input matInput formControlName="name" type="text" placeholder="Name" autocomplete="name">
+      <mat-hint>Optional. Only the first name.</mat-hint>
+    </mat-form-field>
+  <mat-form-field >
+      <input type="text" formControlName="email" matInput placeholder="Email" required autocomplete="email">
+      <mat-error *ngIf="registerForm.get('email').hasError('required')">
+        Email is required
+      </mat-error>
+      <mat-error *ngIf="registerForm.get('email').hasError('email')">
+       Invalid email address
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" formControlName="password" matInput placeholder="Password" required autocomplete="new-password">
+      <mat-hint>Atleast 6 characters</mat-hint>
+      <mat-error *ngIf="registerForm.get('password').hasError('required')">
+        Password is required
+      </mat-error>
+      <mat-error *ngIf="registerForm.get('password').hasError('pattern')">
+        Atleast 6 characters
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" formControlName="confirmPassword" matInput placeholder="Confirm Password" required autocomplete="new-password">
+      <mat-error *ngIf="registerForm.get('confirmPassword').hasError('required')">
+        Password is required
+      </mat-error>
+      <mat-error *ngIf="registerForm.get('confirmPassword').hasError('notMatch')">
+        Password and Confirm Password do not match
+      </mat-error>
+    </mat-form-field>
+    <div fxLayout="row" fxLayoutAlign="center center" class="recaptchaDiv"><ngx-recaptcha2  #captchaElem  class="recaptcha"
+      [size]="'normal'"
+      [hl]="'en'"
+      [theme]="'light'"
+      [type]="'image'"
+      (success)="handleSuccess($event)"
+      (expire)="handleExpire()"
+      (load)="handleLoad()">
+    </ngx-recaptcha2></div>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+  
+      <button mat-raised-button type="submit" color="primary" class="signUpButton" [disabled]="registerForm.invalid==true || captchaSuccess==false|| loading==true">{{signUpText}}</button>
+  </div>
+  </form>
+  <div fxLayout="row" fxLayoutAlign="center center"><span class="or">OR</span></div>
+  <button mat-raised-button class="googleButton" (click)="registerGoogle()"><img src="/assets/icons/google.png" class="googleLogo">Sign Up with Google</button>
+</div>
+</mat-card>
+</div>

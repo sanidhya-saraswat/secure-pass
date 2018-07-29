@@ -1,0 +1,44 @@
+<div *ngIf="showDefault; then default else notDefault"></div>
+<ng-template #default>
+<div fxLayout="column" fxLayoutAlign="center center" class="default">
+<span class="defaultMsg">Select an account type to proceed</span>
+</div>
+
+</ng-template>
+<ng-template #notDefault>
+  <button mat-icon-button class="clearBtn" (click)="close()" tabindex="-1"><mat-icon>clear</mat-icon></button>
+<div class="base" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+    <img [src]="image">
+    <span class="type">{{type}}</span>
+    <form [formGroup]="formGroup" (ngSubmit)="onFormSubmit()">
+    <mat-form-field>
+            <input   type="text" matInput placeholder="URL" formControlName="url" [readonly]="urlDisabled || readonly">
+            
+          </mat-form-field>
+          <mat-form-field>
+                <input  type="text" matInput placeholder="Title" formControlName="title" [readonly]="readonly">
+             
+              </mat-form-field>
+              <mat-form-field>
+                    <input type="text" matInput placeholder="Username" required formControlName="username" [readonly]="readonly">
+                    <mat-error *ngIf="formGroup.get('username').invalid">
+                            Username is required
+                          </mat-error>
+                  </mat-form-field>
+                  <mat-form-field>
+                        <input type="text" matInput placeholder="Password" required formControlName="password" [readonly]="readonly">
+                        <mat-error *ngIf="formGroup.get('password').invalid">
+                                Password is required
+                              </mat-error>
+                      </mat-form-field>
+                      <div *ngIf="showMode=='ADD'" fxLayout="row" fxLayoutAlign="space-between center" class="btndiv">
+                          <button class="btn" type="submit" mat-raised-button color="primary" [disabled]="formGroup.invalid">Add</button>
+                        <button type="button" mat-button (click)="clear()" class="btn">Clear</button>
+                    </div>
+                    <div *ngIf="showMode=='VIEW'" fxLayout="row" fxLayoutAlign="space-between center" class="btndiv">
+                        <button type="submit" mat-raised-button color="primary" class="btn" [disabled]="formGroup.invalid">{{editBtnText}}</button>
+                        <button type="button"  (click)="delete()" mat-stroked-button class="btn" color="primary">Delete</button>
+                  </div>
+                    </form>
+</div>
+</ng-template>

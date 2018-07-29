@@ -1,0 +1,61 @@
+.default
+{
+    width:100%;
+    height:100%;
+    padding:10px;
+}
+.defaultMsg
+{
+    font-size: 24px;
+    color:gray;
+
+text-align: center; 
+}
+img
+{
+    width:125px;
+}
+.base
+{
+    padding:20px;
+}
+.type
+{
+    font-size: 22px;
+}
+mat-form-field
+{
+    width:100%;
+}
+.btn
+{
+    width:100px;
+}
+.btndiv
+{
+    margin-top:10px;
+}
+input:-moz-read-only { 
+    color:#a3a3a3;
+    cursor:not-allowed;
+}
+
+input:read-only { 
+    color:#a3a3a3;
+    cursor:not-allowed;
+}
+@media screen and (min-width:700px)
+{
+    .clearBtn
+    {
+
+        display: none;
+    }
+}
+.clearBtn
+{
+  
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-bottom: -15px;
+}

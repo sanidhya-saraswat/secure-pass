@@ -1,0 +1,22 @@
+.successDiv
+{
+padding:20px;
+margin:20px;
+background:#cffdcf;
+color:green;
+border-radius:5px;
+}
+.failureDiv
+{
+    padding:20px;
+    margin:20px;
+    background:rgb(255, 226, 226);
+    color:red;
+    border-radius:5px;
+}
+.link
+{
+    font-weight: 700;
+    text-decoration: underline;
+    cursor: pointer;
+}

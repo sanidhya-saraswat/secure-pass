@@ -1,0 +1,13 @@
+.signIn
+{
+    font-size: 14px;
+}
+.pointer
+{
+    cursor: pointer;
+}
+.mat-toolbar
+{
+    height: 56px !important;
+    min-height: 56px !important;
+}

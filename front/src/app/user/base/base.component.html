@@ -1,0 +1,74 @@
+<app-navbar class="nav-bar"></app-navbar>
+<mat-sidenav-container  fullscreen class="sidenav-container" class="topManage">
+    <mat-sidenav  (swipeleft)="onSwipeLeftContent($event)" id="leftNav" #leftnav position="start" [mode]="mobileQuery.matches?'side':'over'"  [opened]="mobileQuery.matches">
+    <mat-nav-list id="leftMenuList">
+        <h3 mat-subheader>Passwords</h3>
+      <mat-list-item [ngClass]="selectedLink=='vap'?'active':''" (click)="changeRoute('vap')">
+        <div fxLayout="row" fxLayoutAlign="start center">
+            <mat-icon>calendar_view_day</mat-icon>
+        <span>View all</span>
+      </div>
+      </mat-list-item>
+      <mat-list-item [ngClass]="selectedLink=='anp'?'active':''" (click)="changeRoute('anp')">
+          <div fxLayout="row" fxLayoutAlign="start center">
+              <mat-icon>add</mat-icon>
+          <span>Add new</span>
+          </div>
+        </mat-list-item>
+      <h3 mat-subheader>Secure Notes</h3>
+      <mat-list-item [ngClass]="selectedLink=='van'?'active':''"  (click)="changeRoute('van')">
+          <div fxLayout="row" fxLayoutAlign="start center">
+              <mat-icon>calendar_view_day</mat-icon>
+          <span>View all</span>
+          </div>
+        </mat-list-item>
+        <mat-list-item [ngClass]="selectedLink=='ann'?'active':''" (click)="changeRoute('ann')">
+            <div fxLayout="row" fxLayoutAlign="start center">
+                <mat-icon>add</mat-icon>
+            <span>Add new</span>
+            </div>
+          </mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav id="rightNav" #rightnav position="end" [mode]="mobileQuery2.matches?'side':'over'"  [opened]="mobileQuery2.matches"><app-info></app-info></mat-sidenav>
+    <mat-sidenav-content (swiperight)="onSwipeRightContent($event)" class="sideNavContent ">
+        <mat-progress-bar [ngClass]="showProgress?'':'hide'" mode="indeterminate"></mat-progress-bar>
+        <div class="title1">Hi {{name}},</div>
+        <div class="title2">{{pageTitle}}</div>
+    <!-- email verify div-->
+    <div *ngIf="showEmailVerifyMessage" class="divEmailVerify" fxLayout="column" fxLayoutAlign="center start">
+        <span class="text">A verification mail has been sent to your registered email address. The link will be active for the next 24 hours. Please click the link in mail to verify your account.</span>
+        <b>Troubleshooting</b>
+        <ul class="troubleList">
+            <li>Didn't receive our email?
+                    <ul class="troubleList2">
+                            <li>Try to check the <span class="bold">spam</span> folder in your mail account.</li>
+                            <li>We can just <span (click)="resendMail()"  class="link">resend</span> the mail.</li>
+                        </ul>
+            </li>
+            <li>Email received, but the link is not working?
+                    <ul class="troubleList2">
+                            <li>The link may have been expired. We can just <span (click)="resendMail()" class="link">resend</span> the mail.</li>
+                        </ul>
+            </li>
+        </ul>
+        
+    </div>
+    <!--message div-->
+    <div *ngIf="showSuccessMessage||showFailureMessage" [ngClass]="showSuccessMessage?'successDiv':'failureDiv'" fxLayout="row" fxLayoutAlign="space-between center">
+<span class="left">{{message}}</span>
+<button mat-icon-button (click)="hideMessageDiv()"><mat-icon>clear</mat-icon></button>
+    </div>
+
+
+
+
+
+
+
+
+
+
+       <router-outlet></router-outlet> 
+    </mat-sidenav-content>
+  </mat-sidenav-container>
